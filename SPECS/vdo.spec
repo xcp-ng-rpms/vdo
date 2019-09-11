@@ -1,5 +1,3 @@
-%define python3_sitelib /usr/lib/python3.6/site-packages/
-
 Summary: Management tools for Virtual Data Optimizer
 Name: vdo
 Version: 6.2.1.134
@@ -26,6 +24,7 @@ BuildRequires: libuuid-devel
 BuildRequires: make
 BuildRequires: python36
 BuildRequires: python36-devel
+BuildRequires: python3-rpm-macros
 BuildRequires: systemd
 BuildRequires: valgrind-devel
 BuildRequires: zlib-devel
