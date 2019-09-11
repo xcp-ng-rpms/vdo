@@ -1,7 +1,7 @@
 Summary: Management tools for Virtual Data Optimizer
 Name: vdo
 Version: 6.2.1.134
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPLv2
 Source0: https://github.com/dm-vdo/vdo/archive/%{version}/%{name}-%{version}.tar.gz
 URL: http://github.com/dm-vdo/vdo
@@ -9,7 +9,7 @@ Requires: python36 >= 3.6
 Requires: python36-PyYAML >= 3.10
 Requires: libuuid >= 2.23
 Requires: lvm2
-Requires: vdo-modules = %{version}
+Requires: vdo-modules >= 6.2.1
 ExclusiveArch: x86_64
 ExcludeArch: s390
 ExcludeArch: s390x
@@ -30,6 +30,9 @@ BuildRequires: valgrind-devel
 BuildRequires: zlib-devel
 %{?systemd_requires}
 
+# XCP-ng patches
+Patch1000: vdo-6.2.1.134-use-python36-not-python3.XCP-ng.patch
+
 # Disable an automatic dependency due to a file in examples/monitor.
 %define __requires_exclude perl
 
@@ -40,7 +43,7 @@ block-level deduplication, compression, and thin provisioning.
 This package provides the user-space management tools for VDO.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
 make
@@ -136,6 +139,6 @@ make install DESTDIR=$RPM_BUILD_ROOT INSTALLOWNER= bindir=%{_bindir} \
 %{_sysconfdir}/bash_completion.d/vdostats
 
 %changelog
-* Tue Sep 10 2019 - Samuel Verschelde <stormi-xcp@ylix.fr> - 6.2.1.134-1
-- Import spec file and tar.gz from upstream 6.2.1.134
+* Tue Sep 10 2019 - Samuel Verschelde <stormi-xcp@ylix.fr> - 6.2.1.134-2
+- Import spec file and tar.gz from upstream 6.2.1.134, adapted to XCP-ng
 

@@ -1,0 +1,20 @@
+Index: vdo-manager/vdo
+===================================================================
+--- a/vdo-manager/vdo
++++ b/vdo-manager/vdo	2019-09-11 12:52:01.053787610 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python3
++#!/usr/bin/python36
+ 
+ #
+ # Copyright (c) 2018 Red Hat, Inc.
+Index: vdo-manager/vdostats
+===================================================================
+--- a/vdo-manager/vdostats
++++ b/vdo-manager/vdostats	2019-09-11 12:51:41.519635190 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python3
++#!/usr/bin/python36
+ 
+ #
+ # Copyright (c) 2018 Red Hat, Inc.
